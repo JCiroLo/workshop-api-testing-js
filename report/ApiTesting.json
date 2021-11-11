@@ -1,0 +1,1572 @@
+{
+  "stats": {
+    "suites": 29,
+    "tests": 30,
+    "passes": 29,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-11-11T07:42:20.302Z",
+    "end": "2021-11-11T07:42:32.238Z",
+    "duration": 11936,
+    "testsRegistered": 30,
+    "passPercent": 96.66666666666667,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "592f4fb3-829c-4dcb-bd00-51515c11353e",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Consume GET Service",
+          "fullTitle": "Consume GET Service",
+          "timedOut": false,
+          "duration": 414,
+          "state": "passed",
+          "speed": "slow",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "const response = await agent.get('https://httpbin.org/ip');\nexpect(response.status).to.equal(statusCode.OK);\nexpect(response.body).to.have.property('origin');",
+          "err": {},
+          "uuid": "93232831-7ea0-4b49-8d09-9266adca0e79",
+          "parentUUID": "592f4fb3-829c-4dcb-bd00-51515c11353e",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Consume GET Service with query parameters",
+          "fullTitle": "Consume GET Service with query parameters",
+          "timedOut": false,
+          "duration": 362,
+          "state": "passed",
+          "speed": "slow",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "const query = {\n  name: 'John',\n  age: '31',\n  city: 'New York'\n};\n  \nconst response = await agent.get('https://httpbin.org/get').query(query);\n  \nexpect(response.status).to.equal(statusCode.OK);\nexpect(response.body.args).to.eql(query);",
+          "err": {},
+          "uuid": "ad4e1add-f66f-46d5-801a-98b2ec6f49a4",
+          "parentUUID": "592f4fb3-829c-4dcb-bd00-51515c11353e",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Consume HEAD Service",
+          "fullTitle": "Consume HEAD Service",
+          "timedOut": false,
+          "duration": 351,
+          "state": "passed",
+          "speed": "slow",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "const response = await agent.head('https://httpbin.org/headers');\n\n  expect(response.status).to.equal(statusCode.OK);",
+          "err": {},
+          "uuid": "383f1636-4813-4ec7-a26c-78a57c1c0c58",
+          "parentUUID": "592f4fb3-829c-4dcb-bd00-51515c11353e",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Consume PATCH Service with query parameters",
+          "fullTitle": "Consume PATCH Service with query parameters",
+          "timedOut": false,
+          "duration": 345,
+          "state": "passed",
+          "speed": "slow",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "const query = {\n  name: 'John',\n  age: '31',\n  city: 'New York'\n};\n  \nconst response = await agent.patch('https://httpbin.org/patch').query(query);\n  \nexpect(response.status).to.equal(statusCode.OK);\nexpect(response.body.args).to.eql(query);",
+          "err": {},
+          "uuid": "a46ad52b-7d50-4d92-b25f-9610d44d6cba",
+          "parentUUID": "592f4fb3-829c-4dcb-bd00-51515c11353e",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Consume PUT Service with query parameters",
+          "fullTitle": "Consume PUT Service with query parameters",
+          "timedOut": false,
+          "duration": 367,
+          "state": "passed",
+          "speed": "slow",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "const query = {\n  name: 'John',\n  age: '31',\n  city: 'New York'\n};\n  \nconst response = await agent.put('https://httpbin.org/put').query(query);\n  \nexpect(response.status).to.equal(statusCode.OK);\nexpect(response.body.args).to.eql(query);",
+          "err": {},
+          "uuid": "c8f356fa-182b-46cf-b212-52701d196820",
+          "parentUUID": "592f4fb3-829c-4dcb-bd00-51515c11353e",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Consume DELETE Service",
+          "fullTitle": "Consume DELETE Service",
+          "timedOut": false,
+          "duration": 349,
+          "state": "passed",
+          "speed": "slow",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "const query = {\n  name: 'John',\n  age: 31,\n  city: 'New York'\n};\n  const response = await agent.del('https://httpbin.org/delete').query(query);\n\n  expect(response.status).to.equal(statusCode.OK);",
+          "err": {},
+          "uuid": "c5ab8498-6e27-497f-bde0-b9555d7c601a",
+          "parentUUID": "592f4fb3-829c-4dcb-bd00-51515c11353e",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [
+        {
+          "uuid": "87caca58-e8f0-48bc-b0e9-8676b7dcae13",
+          "title": "Github Api Test",
+          "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Authentication.test.js",
+          "file": "\\test\\GithubApi.Authentication.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "802abd1e-4f44-49fe-983a-c9876d04f5d3",
+              "title": "Authentication",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Authentication.test.js",
+              "file": "\\test\\GithubApi.Authentication.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Via OAuth2 Tokens by Header",
+                  "fullTitle": "Github Api Test Authentication Via OAuth2 Tokens by Header",
+                  "timedOut": false,
+                  "duration": 301,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const res = await agent.get(`${urlBase}/repos/${githubUserName}/${repository}`)\n  .auth('token', process.env.ACCESS_TOKEN)\n  .set('User-Agent', 'agent');\nexpect(res.status).to.equal(statusCode.OK);\nexpect(res.body.description).equal('This is a Workshop about Api Testing in JavaScript');",
+                  "err": {},
+                  "uuid": "1c95cf94-1f66-4b88-a13b-9c5945f1b702",
+                  "parentUUID": "802abd1e-4f44-49fe-983a-c9876d04f5d3",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Via OAuth2 Tokens by parameter",
+                  "fullTitle": "Github Api Test Authentication Via OAuth2 Tokens by parameter",
+                  "timedOut": false,
+                  "duration": 312,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const res = await agent.get(`${urlBase}/repos/${githubUserName}/${repository}`)\n  .set('access_token', process.env.ACCESS_TOKEN) \n  .set('User-Agent', 'agent')\n// I changed the query function to set function in the line 20 because the agent query need auth headers\n// to proccess the request correctly, it didnt work with the parameters.\nexpect(res.status).to.equal(statusCode.OK);\nexpect(res.body.description).equal('This is a Workshop about Api Testing in JavaScript');",
+                  "err": {},
+                  "uuid": "4e9c9188-0202-4cd4-b1cc-bf4de535b125",
+                  "parentUUID": "802abd1e-4f44-49fe-983a-c9876d04f5d3",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "1c95cf94-1f66-4b88-a13b-9c5945f1b702",
+                "4e9c9188-0202-4cd4-b1cc-bf4de535b125"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 613,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        },
+        {
+          "uuid": "344e6bd2-7082-4ca6-9004-928811b1755b",
+          "title": "DELETE Methods",
+          "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Gist.test.js",
+          "file": "\\test\\GithubApi.Gist.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "de28459f-f66e-46eb-805d-53570c2ca28f",
+              "title": "Create GIST",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Gist.test.js",
+              "file": "\\test\\GithubApi.Gist.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Create GIST\"",
+                  "fullTitle": "DELETE Methods Create GIST \"before all\" hook in \"Create GIST\"",
+                  "timedOut": false,
+                  "duration": 741,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "res = await agent.post(`${baseUrl}/gists`)\n  .send(createGist)\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN);\ngist = res.body;",
+                  "err": {},
+                  "uuid": "be424062-e8fb-4ccd-9bf9-c16baf7ee0e1",
+                  "parentUUID": "de28459f-f66e-46eb-805d-53570c2ca28f",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Then a gist should be created",
+                  "fullTitle": "DELETE Methods Create GIST Then a gist should be created",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(gist).to.containSubset(createGist);\n      expect(res.status).to.equal(statusCode.CREATED);",
+                  "err": {},
+                  "uuid": "1f864e48-b19d-4748-9b4f-1382199e7326",
+                  "parentUUID": "de28459f-f66e-46eb-805d-53570c2ca28f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "1f864e48-b19d-4748-9b4f-1382199e7326"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            },
+            {
+              "uuid": "5146241d-e87e-4f91-9751-912c73a427b1",
+              "title": "Check if GIST exists",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Gist.test.js",
+              "file": "\\test\\GithubApi.Gist.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Check if GIST exists\"",
+                  "fullTitle": "DELETE Methods Check if GIST exists \"before all\" hook in \"Check if GIST exists\"",
+                  "timedOut": false,
+                  "duration": 330,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "res = await agent.get(gist.url)\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN);",
+                  "err": {},
+                  "uuid": "264b3734-8edc-41fd-9be1-202024a6f35f",
+                  "parentUUID": "5146241d-e87e-4f91-9751-912c73a427b1",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Then the gist should exist",
+                  "fullTitle": "DELETE Methods Check if GIST exists Then the gist should exist",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(res.status).to.equal(statusCode.OK);",
+                  "err": {},
+                  "uuid": "404d0cda-5188-4c45-b8c2-51b16cad747d",
+                  "parentUUID": "5146241d-e87e-4f91-9751-912c73a427b1",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "404d0cda-5188-4c45-b8c2-51b16cad747d"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            },
+            {
+              "uuid": "f1612288-1f00-476a-868c-60b456cd429e",
+              "title": "Delete GIST",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Gist.test.js",
+              "file": "\\test\\GithubApi.Gist.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Delete GIST\"",
+                  "fullTitle": "DELETE Methods Delete GIST \"before all\" hook in \"Delete GIST\"",
+                  "timedOut": false,
+                  "duration": 432,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "res = await agent.del(gist.url)\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN);",
+                  "err": {},
+                  "uuid": "e3ae5db5-647a-4a29-bb0a-043d64f6337b",
+                  "parentUUID": "f1612288-1f00-476a-868c-60b456cd429e",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Then the gist should be deleted",
+                  "fullTitle": "DELETE Methods Delete GIST Then the gist should be deleted",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(res.status).to.equal(statusCode.NO_CONTENT);",
+                  "err": {},
+                  "uuid": "8229e8bd-4f5b-4b6a-acda-bf568415edfe",
+                  "parentUUID": "f1612288-1f00-476a-868c-60b456cd429e",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "8229e8bd-4f5b-4b6a-acda-bf568415edfe"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            },
+            {
+              "uuid": "277965a5-138e-4953-af35-782ab7d14ca3",
+              "title": "Check if GIST exists again",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Gist.test.js",
+              "file": "\\test\\GithubApi.Gist.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Check if GIST exists again\"",
+                  "fullTitle": "DELETE Methods Check if GIST exists again \"before all\" hook in \"Check if GIST exists again\"",
+                  "timedOut": false,
+                  "duration": 297,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "try {\n  await agent.get(gist.url)\n    .set('User-Agent', 'agent')\n    .auth('token', process.env.ACCESS_TOKEN);\n} catch (res) {\n  resStatus = res.status;\n}",
+                  "err": {},
+                  "uuid": "899dc474-ba72-48f8-b756-9867e989e5ec",
+                  "parentUUID": "277965a5-138e-4953-af35-782ab7d14ca3",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Then the gist should not exist anymore",
+                  "fullTitle": "DELETE Methods Check if GIST exists again Then the gist should not exist anymore",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(resStatus).to.equal(statusCode.NOT_FOUND);",
+                  "err": {},
+                  "uuid": "8ebcb735-d3f4-4125-b415-98df5ae619c6",
+                  "parentUUID": "277965a5-138e-4953-af35-782ab7d14ca3",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "8ebcb735-d3f4-4125-b415-98df5ae619c6"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        },
+        {
+          "uuid": "0810fb45-6b4c-4f59-8b9e-92c32bae208d",
+          "title": "POST and PATCH methods",
+          "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Issue.test.js",
+          "file": "\\test\\GithubApi.Issue.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "6a894245-fded-467c-a209-9c3345e1419f",
+              "title": "Check if the logged user has one public repo",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Issue.test.js",
+              "file": "\\test\\GithubApi.Issue.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Check if the logged user has one public repo\"",
+                  "fullTitle": "POST and PATCH methods Check if the logged user has one public repo \"before all\" hook in \"Check if the logged user has one public repo\"",
+                  "timedOut": false,
+                  "duration": 346,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "res = await agent.get(`${baseUrl}/user`)\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN);\nuser = res.body",
+                  "err": {},
+                  "uuid": "1c7c0c35-6127-4b7f-b7df-a070540bbb56",
+                  "parentUUID": "6a894245-fded-467c-a209-9c3345e1419f",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Then a user should be logged",
+                  "fullTitle": "POST and PATCH methods Check if the logged user has one public repo Then a user should be logged",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(res.status).to.equal(statusCode.OK);",
+                  "err": {},
+                  "uuid": "d9b577c0-b01f-47ac-b166-59b2c251efd4",
+                  "parentUUID": "6a894245-fded-467c-a209-9c3345e1419f",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Then the user has at least one public repo",
+                  "fullTitle": "POST and PATCH methods Check if the logged user has one public repo Then the user has at least one public repo",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(user.public_repos).to.be.above(0);",
+                  "err": {},
+                  "uuid": "4ecf441e-c746-4bc5-921a-34247e6d31db",
+                  "parentUUID": "6a894245-fded-467c-a209-9c3345e1419f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "d9b577c0-b01f-47ac-b166-59b2c251efd4",
+                "4ecf441e-c746-4bc5-921a-34247e6d31db"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            },
+            {
+              "uuid": "5650ce62-8825-4416-85d8-2a8b2bf5bdc6",
+              "title": "Get user first repo",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Issue.test.js",
+              "file": "\\test\\GithubApi.Issue.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Get user first repo\"",
+                  "fullTitle": "POST and PATCH methods Get user first repo \"before all\" hook in \"Get user first repo\"",
+                  "timedOut": false,
+                  "duration": 458,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const res = await agent.get(user.repos_url)\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN)\nrepo = res.body[0];",
+                  "err": {},
+                  "uuid": "ab15fbd0-a277-4dda-a446-3003f50befac",
+                  "parentUUID": "5650ce62-8825-4416-85d8-2a8b2bf5bdc6",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Then there should be a repo",
+                  "fullTitle": "POST and PATCH methods Get user first repo Then there should be a repo",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(repo).to.not.equal(undefined);",
+                  "err": {},
+                  "uuid": "a172e2f6-ea46-4fc3-b44a-683f5e45f295",
+                  "parentUUID": "5650ce62-8825-4416-85d8-2a8b2bf5bdc6",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a172e2f6-ea46-4fc3-b44a-683f5e45f295"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            },
+            {
+              "uuid": "1fc39aec-8dc0-4c96-a37f-805cbd955de0",
+              "title": "Create an issue",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Issue.test.js",
+              "file": "\\test\\GithubApi.Issue.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Create an issue\"",
+                  "fullTitle": "POST and PATCH methods Create an issue \"before all\" hook in \"Create an issue\"",
+                  "timedOut": false,
+                  "duration": 570,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const res = await agent.post(`${baseUrl}/repos/${user.login}/${repo.name}/issues`)\n  .send({ title: 'This is an issue' })\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN);\nissue = res.body;",
+                  "err": {},
+                  "uuid": "4bc13d88-b5d2-4d9a-af8e-86fd4520b1d8",
+                  "parentUUID": "1fc39aec-8dc0-4c96-a37f-805cbd955de0",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Then an issue should be created",
+                  "fullTitle": "POST and PATCH methods Create an issue Then an issue should be created",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(issue.title).to.equal('This is an issue');\nexpect(issue.body).to.equal(null);",
+                  "err": {},
+                  "uuid": "2512a3d3-5aa5-407f-b1d7-d1f2ddef5acc",
+                  "parentUUID": "1fc39aec-8dc0-4c96-a37f-805cbd955de0",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "2512a3d3-5aa5-407f-b1d7-d1f2ddef5acc"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            },
+            {
+              "uuid": "966631df-0522-4132-b69c-25af2a4c9562",
+              "title": "Modify the issue",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Issue.test.js",
+              "file": "\\test\\GithubApi.Issue.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Modify the issue\"",
+                  "fullTitle": "POST and PATCH methods Modify the issue \"before all\" hook in \"Modify the issue\"",
+                  "timedOut": false,
+                  "duration": 586,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const res = await agent.patch(`${baseUrl}/repos/${user.login}/${repo.name}/issues/${issue.number}`)\n  .send({ body: 'This is the body of the issue' })\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN);\nmodIssue = res.body;",
+                  "err": {},
+                  "uuid": "a91e40f2-c271-453d-916f-00917f82dd27",
+                  "parentUUID": "966631df-0522-4132-b69c-25af2a4c9562",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Then an issue should be modified",
+                  "fullTitle": "POST and PATCH methods Modify the issue Then an issue should be modified",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(modIssue.title).to.equal(issue.title);\nexpect(modIssue.body).to.equal('This is the body of the issue');",
+                  "err": {},
+                  "uuid": "00589880-7c47-471e-94dd-b9a0cb5154cf",
+                  "parentUUID": "966631df-0522-4132-b69c-25af2a4c9562",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "00589880-7c47-471e-94dd-b9a0cb5154cf"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        },
+        {
+          "uuid": "94a4cab6-68f2-44c5-9062-4757f47ada86",
+          "title": "PUT Methods",
+          "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Put.test.js",
+          "file": "\\test\\GithubApi.Put.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "f2d42744-bc72-4990-8ca5-c4d3d8c5b092",
+              "title": "Follow the user aperdomob",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Put.test.js",
+              "file": "\\test\\GithubApi.Put.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Follow the user aperdomob\"",
+                  "fullTitle": "PUT Methods Follow the user aperdomob \"before all\" hook in \"Follow the user aperdomob\"",
+                  "timedOut": false,
+                  "duration": 325,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "res = await agent.put(`${baseUrl}/user/following/aperdomob`)\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN);",
+                  "err": {},
+                  "uuid": "8e7ef334-0e81-44ba-80ba-1d80cdc13279",
+                  "parentUUID": "f2d42744-bc72-4990-8ca5-c4d3d8c5b092",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "then the user aperdomob should be followed",
+                  "fullTitle": "PUT Methods Follow the user aperdomob then the user aperdomob should be followed",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(res.status).to.eql(statusCode.NO_CONTENT);\nexpect(res.body).to.eql({});",
+                  "err": {},
+                  "uuid": "04be7734-5007-43bf-b5a7-4d281d1e4ac3",
+                  "parentUUID": "f2d42744-bc72-4990-8ca5-c4d3d8c5b092",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "04be7734-5007-43bf-b5a7-4d281d1e4ac3"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            },
+            {
+              "uuid": "1d300fb5-38fb-47d1-84ce-fae0312d7630",
+              "title": "Check user in the user list",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Put.test.js",
+              "file": "\\test\\GithubApi.Put.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Check user in the user list\"",
+                  "fullTitle": "PUT Methods Check user in the user list \"before all\" hook in \"Check user in the user list\"",
+                  "timedOut": false,
+                  "duration": 305,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const res = await agent.get(`${baseUrl}/user/following`)\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN);\nuser = res.body.find(list => list.login === 'aperdomob');",
+                  "err": {},
+                  "uuid": "5f2e6e7b-3443-4a74-8149-b1bf1ac73cca",
+                  "parentUUID": "1d300fb5-38fb-47d1-84ce-fae0312d7630",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "then the user aperdomob is followed",
+                  "fullTitle": "PUT Methods Check user in the user list then the user aperdomob is followed",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "assert.exists(user)",
+                  "err": {},
+                  "uuid": "51c7a73b-ef49-43d6-b075-66292c3a2cc3",
+                  "parentUUID": "1d300fb5-38fb-47d1-84ce-fae0312d7630",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "51c7a73b-ef49-43d6-b075-66292c3a2cc3"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            },
+            {
+              "uuid": "d7642c13-abf3-449f-bd8c-32f299567d02",
+              "title": "Check idempotence",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Put.test.js",
+              "file": "\\test\\GithubApi.Put.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [],
+              "suites": [
+                {
+                  "uuid": "1c430ba9-3351-4637-b8ea-a805980efac8",
+                  "title": "Follow user aperdomob again",
+                  "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Put.test.js",
+                  "file": "\\test\\GithubApi.Put.test.js",
+                  "beforeHooks": [
+                    {
+                      "title": "\"before all\" hook in \"Follow user aperdomob again\"",
+                      "fullTitle": "PUT Methods Check idempotence Follow user aperdomob again \"before all\" hook in \"Follow user aperdomob again\"",
+                      "timedOut": false,
+                      "duration": 318,
+                      "state": null,
+                      "speed": null,
+                      "pass": false,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "res = await agent.put(`${baseUrl}/user/following/aperdomob`)\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN);",
+                      "err": {},
+                      "uuid": "bfa0d9bf-1d11-4403-911f-cdbe2bd0fa66",
+                      "parentUUID": "1c430ba9-3351-4637-b8ea-a805980efac8",
+                      "isHook": true,
+                      "skipped": false
+                    }
+                  ],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "then the user aperdomob should be followed",
+                      "fullTitle": "PUT Methods Check idempotence Follow user aperdomob again then the user aperdomob should be followed",
+                      "timedOut": false,
+                      "duration": 0,
+                      "state": "passed",
+                      "speed": "fast",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "expect(res.status).to.eql(statusCode.NO_CONTENT);\nexpect(res.body).to.eql({});",
+                      "err": {},
+                      "uuid": "a5537be5-9c34-4c69-bc75-484a8edc2e5b",
+                      "parentUUID": "1c430ba9-3351-4637-b8ea-a805980efac8",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "a5537be5-9c34-4c69-bc75-484a8edc2e5b"
+                  ],
+                  "failures": [],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 0,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 5000
+                },
+                {
+                  "uuid": "e41a68be-7c6e-4110-9c4e-0daf511a993c",
+                  "title": "Check user list again",
+                  "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Put.test.js",
+                  "file": "\\test\\GithubApi.Put.test.js",
+                  "beforeHooks": [
+                    {
+                      "title": "\"before all\" hook in \"Check user list again\"",
+                      "fullTitle": "PUT Methods Check idempotence Check user list again \"before all\" hook in \"Check user list again\"",
+                      "timedOut": false,
+                      "duration": 305,
+                      "state": null,
+                      "speed": null,
+                      "pass": false,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "const res = await agent.get(`${baseUrl}/user/following`)\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN);\nuser = res.body.find(list => list.login === 'aperdomob');",
+                      "err": {},
+                      "uuid": "17bdfc65-8919-4206-b0c9-94ca8b1e8f1e",
+                      "parentUUID": "e41a68be-7c6e-4110-9c4e-0daf511a993c",
+                      "isHook": true,
+                      "skipped": false
+                    }
+                  ],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "then the user aperdomob is followed",
+                      "fullTitle": "PUT Methods Check idempotence Check user list again then the user aperdomob is followed",
+                      "timedOut": false,
+                      "duration": 0,
+                      "state": "passed",
+                      "speed": "fast",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "assert.exists(user)",
+                      "err": {},
+                      "uuid": "fdc3b46d-a7fd-4f7f-8176-8cfa45cec0e4",
+                      "parentUUID": "e41a68be-7c6e-4110-9c4e-0daf511a993c",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "fdc3b46d-a7fd-4f7f-8176-8cfa45cec0e4"
+                  ],
+                  "failures": [],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 0,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 5000
+                }
+              ],
+              "passes": [],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        },
+        {
+          "uuid": "1237c957-14a3-4a69-8bd8-54456ed0caf2",
+          "title": "HEAD Mehtods",
+          "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Redirect.js",
+          "file": "\\test\\GithubApi.Redirect.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "181877eb-3ee9-435f-ad96-aba21b6edae2",
+              "title": "Check page with HEAD",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Redirect.js",
+              "file": "\\test\\GithubApi.Redirect.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Check page with HEAD\"",
+                  "fullTitle": "HEAD Mehtods Check page with HEAD \"before all\" hook in \"Check page with HEAD\"",
+                  "timedOut": false,
+                  "duration": 303,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "try {\n  await agent.head(`${baseUrl}/aperdomob/redirect-test`);\n} catch (res) {\n  axuRes = res;\n}",
+                  "err": {},
+                  "uuid": "9da6665b-17a1-4e34-9b6c-336f89cc3f20",
+                  "parentUUID": "181877eb-3ee9-435f-ad96-aba21b6edae2",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "The the page should redirect",
+                  "fullTitle": "HEAD Mehtods Check page with HEAD The the page should redirect",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(axuRes.status).to.equal(statusCode.MOVED_PERMANENTLY);\nexpect(axuRes.response.headers.location).to.equal(`${baseUrl}/aperdomob/new-redirect-test`);",
+                  "err": {},
+                  "uuid": "938e2daa-5746-4927-9d76-2d8d6cf0895f",
+                  "parentUUID": "181877eb-3ee9-435f-ad96-aba21b6edae2",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "938e2daa-5746-4927-9d76-2d8d6cf0895f"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            },
+            {
+              "uuid": "33803b9f-dea6-4f51-8361-8b570b4cc9f6",
+              "title": "When checking the page with GET",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Redirect.js",
+              "file": "\\test\\GithubApi.Redirect.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"When checking the page with GET\"",
+                  "fullTitle": "HEAD Mehtods When checking the page with GET \"before all\" hook in \"When checking the page with GET\"",
+                  "timedOut": false,
+                  "duration": 764,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "res = await agent.get(`${baseUrl}/aperdomob/redirect-test`);",
+                  "err": {},
+                  "uuid": "4df07e7a-632a-409d-a489-ce83bda60a1c",
+                  "parentUUID": "33803b9f-dea6-4f51-8361-8b570b4cc9f6",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "The the page should redirect",
+                  "fullTitle": "HEAD Mehtods When checking the page with GET The the page should redirect",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(res.status).to.equal(statusCode.OK);",
+                  "err": {},
+                  "uuid": "2f8f1686-c518-4924-9898-207f26535925",
+                  "parentUUID": "33803b9f-dea6-4f51-8361-8b570b4cc9f6",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "2f8f1686-c518-4924-9898-207f26535925"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        },
+        {
+          "uuid": "ed8e7090-3c3d-40b3-be97-324aa88f024c",
+          "title": "GET Methods",
+          "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Repositories.test.js",
+          "file": "\\test\\GithubApi.Repositories.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "5fdd8ad7-67b6-4a71-891a-6343dfd747a7",
+              "title": "Check user",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Repositories.test.js",
+              "file": "\\test\\GithubApi.Repositories.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Then the user should be checked",
+                  "fullTitle": "GET Methods Check user Then the user should be checked",
+                  "timedOut": false,
+                  "duration": 267,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "const res = await agent.get(`${baseUrl}/users/${username}`)\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCES_TOKEN)\nexpect(res.status).to.equal(statusCode.StatusCodes.OK);\nexpect(res.body.name).to.equal('Alejandro Perdomo');\nexpect(res.body.company).to.equal('Perficient Latam');\nexpect(res.body.location).to.equal('Colombia');",
+                  "err": {
+                    "message": "Error: Forbidden",
+                    "estack": "Error: Forbidden\n    at Request.callback (node_modules\\superagent\\lib\\node\\index.js:883:15)\n    at C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\node_modules\\superagent\\lib\\node\\index.js:1127:20\n    at IncomingMessage.<anonymous> (node_modules\\superagent\\lib\\node\\parsers\\json.js:22:7)\n    at Unzip.<anonymous> (node_modules\\superagent\\lib\\node\\unzip.js:53:12)\n    at endReadableNT (internal/streams/readable.js:1317:12)\n    at processTicksAndRejections (internal/process/task_queues.js:82:21)",
+                    "diff": null
+                  },
+                  "uuid": "2539cefe-6f78-4428-8e80-ce98465636c6",
+                  "parentUUID": "5fdd8ad7-67b6-4a71-891a-6343dfd747a7",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "2539cefe-6f78-4428-8e80-ce98465636c6"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 267,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            },
+            {
+              "uuid": "3fdaaa2e-31db-42f3-ad1b-2a964aff8aae",
+              "title": "Check repository",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Repositories.test.js",
+              "file": "\\test\\GithubApi.Repositories.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Then the jasmine-awesome-report repository should be checked",
+                  "fullTitle": "GET Methods Check repository Then the jasmine-awesome-report repository should be checked",
+                  "timedOut": false,
+                  "duration": 567,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const res = await agent.get(`${baseUrl}/users/${username}/repos`)\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN)\nexpect(res.status).to.equal(statusCode.OK);\nconst repository = res.body.find((repos) => repos.name === repo);\nexpect(repository.name).to.equal(repo);\nexpect(repository.private).to.equal(false);\nexpect(repository.description).to.equal('An awesome html report for Jasmine');",
+                  "err": {},
+                  "uuid": "9241b2fe-dfa5-4f7c-91a6-596a6441c090",
+                  "parentUUID": "3fdaaa2e-31db-42f3-ad1b-2a964aff8aae",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "9241b2fe-dfa5-4f7c-91a6-596a6441c090"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 567,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            },
+            {
+              "uuid": "95a41dfe-7801-4276-b4bf-2b323157c33e",
+              "title": "Donwload ZIP repository",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Repositories.test.js",
+              "file": "\\test\\GithubApi.Repositories.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Donwload ZIP repository\"",
+                  "fullTitle": "GET Methods Donwload ZIP repository \"before all\" hook in \"Donwload ZIP repository\"",
+                  "timedOut": false,
+                  "duration": 943,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "zip = await agent.get(`https://github.com/${username}/${repo}/archive/master.zip`)\n  .auth('token', process.env.ACCESS_TOKEN)\n  .set('User-Agent', 'agent')\n  .buffer(true);",
+                  "err": {},
+                  "uuid": "049b84d0-66c4-4a2b-bfb6-b7800dd552a4",
+                  "parentUUID": "95a41dfe-7801-4276-b4bf-2b323157c33e",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "then the repository should be downloaded",
+                  "fullTitle": "GET Methods Donwload ZIP repository then the repository should be downloaded",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(md5(zip)).to.equal(md5ToCheck);",
+                  "err": {},
+                  "uuid": "3f9c248c-5221-46e1-a2af-bee47a3fea50",
+                  "parentUUID": "95a41dfe-7801-4276-b4bf-2b323157c33e",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "3f9c248c-5221-46e1-a2af-bee47a3fea50"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            },
+            {
+              "uuid": "a344a716-fc67-443d-b3f2-ca70ce43ef1e",
+              "title": "Check and download README",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Repositories.test.js",
+              "file": "\\test\\GithubApi.Repositories.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Check and download README\"",
+                  "fullTitle": "GET Methods Check and download README \"before all\" hook in \"Check and download README\"",
+                  "timedOut": false,
+                  "duration": 310,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const { body } = await agent.get(`${baseUrl}/repos/${username}/${repo}/contents/`)\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN);\nfiles = body\nreadme = files.find((file) => file.name === 'README.md');",
+                  "err": {},
+                  "uuid": "29ac2506-06ec-45e6-a020-d23b34610796",
+                  "parentUUID": "a344a716-fc67-443d-b3f2-ca70ce43ef1e",
+                  "isHook": true,
+                  "skipped": false
+                },
+                {
+                  "title": "\"before all\" hook in \"Check and download README\"",
+                  "fullTitle": "GET Methods Check and download README \"before all\" hook in \"Check and download README\"",
+                  "timedOut": false,
+                  "duration": 253,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const { text } = await agent.get(readme.download_url);\n        content = text",
+                  "err": {},
+                  "uuid": "df05a86c-b94d-4769-abac-63c9e11b4a26",
+                  "parentUUID": "a344a716-fc67-443d-b3f2-ca70ce43ef1e",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Then the README file should be checked",
+                  "fullTitle": "GET Methods Check and download README Then the README file should be checked",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "assert.exists(readme);\n      expect(readme).containSubset(readmeData);",
+                  "err": {},
+                  "uuid": "093547f4-2792-4a7c-a59a-ad56e663482e",
+                  "parentUUID": "a344a716-fc67-443d-b3f2-ca70ce43ef1e",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Then the README file should be downloaded",
+                  "fullTitle": "GET Methods Check and download README Then the README file should be downloaded",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(md5(content)).to.equal(md5ToCheck);",
+                  "err": {},
+                  "uuid": "5d196422-a314-49fb-908b-72e0338febb5",
+                  "parentUUID": "a344a716-fc67-443d-b3f2-ca70ce43ef1e",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "093547f4-2792-4a7c-a59a-ad56e663482e",
+                "5d196422-a314-49fb-908b-72e0338febb5"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        },
+        {
+          "uuid": "3f45a143-d7fe-461f-960b-4f172138f549",
+          "title": "Query parameters test",
+          "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Users.test.js",
+          "file": "\\test\\GithubApi.Users.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "5fff8c8e-adbe-4c8a-b57c-f4f23b0b517f",
+              "title": "Check 10 users",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Users.test.js",
+              "file": "\\test\\GithubApi.Users.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Check 10 users\"",
+                  "fullTitle": "Query parameters test Check 10 users \"before all\" hook in \"Check 10 users\"",
+                  "timedOut": false,
+                  "duration": 300,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "res = await agent.get(`${baseUrl}/users`)\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN)\n  .query({ per_page: 10 });",
+                  "err": {},
+                  "uuid": "444a1563-a529-4891-8c32-9178d8365d8a",
+                  "parentUUID": "5fff8c8e-adbe-4c8a-b57c-f4f23b0b517f",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Then there should be 10 users ",
+                  "fullTitle": "Query parameters test Check 10 users Then there should be 10 users ",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(res.body.length).to.equal(10);",
+                  "err": {},
+                  "uuid": "29272810-d608-4c97-a654-535ac35debf4",
+                  "parentUUID": "5fff8c8e-adbe-4c8a-b57c-f4f23b0b517f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "29272810-d608-4c97-a654-535ac35debf4"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            },
+            {
+              "uuid": "ce47a406-e70a-4efa-9b39-f410800d10a2",
+              "title": "Check 50 users",
+              "fullFile": "C:\\Users\\Juan Pablo\\Desktop\\U\\PAE\\workshop-api-testing-js\\test\\GithubApi.Users.test.js",
+              "file": "\\test\\GithubApi.Users.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"Check 50 users\"",
+                  "fullTitle": "Query parameters test Check 50 users \"before all\" hook in \"Check 50 users\"",
+                  "timedOut": false,
+                  "duration": 376,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "res = await agent.get(`${baseUrl}/users`)\n  .set('User-Agent', 'agent')\n  .auth('token', process.env.ACCESS_TOKEN)\n  .query({ per_page: 50 });",
+                  "err": {},
+                  "uuid": "6a121031-63c3-4dab-9a01-23b9535c4b26",
+                  "parentUUID": "ce47a406-e70a-4efa-9b39-f410800d10a2",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Then there should be 50 users ",
+                  "fullTitle": "Query parameters test Check 50 users Then there should be 50 users ",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(res.body.length).to.equal(50);",
+                  "err": {},
+                  "uuid": "4e91d4c7-31f3-43f7-a7d1-874866a820c9",
+                  "parentUUID": "ce47a406-e70a-4efa-9b39-f410800d10a2",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "4e91d4c7-31f3-43f7-a7d1-874866a820c9"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 5000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        }
+      ],
+      "passes": [
+        "93232831-7ea0-4b49-8d09-9266adca0e79",
+        "ad4e1add-f66f-46d5-801a-98b2ec6f49a4",
+        "383f1636-4813-4ec7-a26c-78a57c1c0c58",
+        "a46ad52b-7d50-4d92-b25f-9610d44d6cba",
+        "c8f356fa-182b-46cf-b212-52701d196820",
+        "c5ab8498-6e27-497f-bde0-b9555d7c601a"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 2188,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 5000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.4.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "ApiTesting",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "report",
+        "reportFilename": "ApiTesting"
+      },
+      "version": "5.2.0"
+    }
+  }
+}
