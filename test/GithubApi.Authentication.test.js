@@ -1,12 +1,14 @@
 const agent = require('superagent');
 const statusCode = require('http-status-codes');
 const { expect } = require('chai');
+require('dotenv').config()
 
 const urlBase = 'https://api.github.com';
 const githubUserName = 'JCiroLo';
 const repository = 'workshop-api-testing-js';
 
 describe('Github Api Test', () => {
+  console.log(process.env.ACCESS_TOKEN)
   describe('Authentication', () => {
     it('Via OAuth2 Tokens by Header', async () => {
       const res = await agent.get(`${urlBase}/repos/${githubUserName}/${repository}`)
